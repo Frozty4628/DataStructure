@@ -24,6 +24,9 @@
   <ItemGroup>
     <ClCompile Include="Experiment_1.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="Text.txt" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{D8522386-F741-4F92-82FA-92DA3901A702}</ProjectGuid>
