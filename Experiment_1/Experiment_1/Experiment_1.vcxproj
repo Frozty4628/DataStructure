@@ -18,6 +18,12 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Experiment_1.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SeqList.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{D8522386-F741-4F92-82FA-92DA3901A702}</ProjectGuid>
@@ -114,12 +120,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="C:\Users\suzume\Desktop\Experiment_1.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="C:\Users\suzume\Desktop\SeqList.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
