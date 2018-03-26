@@ -19,11 +19,21 @@ public:
 	void input();
 	void output() const;
 	int GetLast() const;
+	void SetEmpty();
+	T GetValue(int i);
+	int FindYN(T&x);
 
 private:
 	T * data;
 	int MaxSize;
 	int last;
+};
+
+class SetOperations {
+public:
+	void Union(SeqList MyList, SeqList YourList); //并集
+	void Intersection(SeqList MyList, SeqList YourList); //交集
+
 };
 
 //SeqList::SeqList(int sz)

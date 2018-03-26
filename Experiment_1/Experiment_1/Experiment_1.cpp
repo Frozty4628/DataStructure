@@ -11,12 +11,16 @@ int main()
 {
 	//建立一个数据表
 	SeqList MyList(100);
+	SeqList YourList(100);
+	SetOperations setcalc;
 	while (true)
 	{
 		cout << "这个100元素数据表可以实现如下功能:" << endl;
 		cout << "1,input data\n" << "2,insert data\n" << "3,delete data\n"
 			<< "4,search data position\n" << "5,get length of list\n" << "6,set a data\n"
-			<< "7,get value of data\n" << "8,output data\n" << "0,exit\n" << endl;
+			<< "7,get value of data\n" << "8,output data\n"
+			<< "9,work out union set of 2 lists\n" << "10,work out intersection set of 2 lists\n"
+			<< "0,exit\n" << endl;
 		cout << "目前表中的元素数量：" << MyList.GetLast() << endl;
 		int choice = -1;
 		cout << "请输入要实现的功能：" << endl;
@@ -69,6 +73,20 @@ int main()
 			//输出
 			MyList.output();
 			break;
+		case 9:
+			//求并集
+			cout << "请输入第二个顺序表的元素个数" << endl;
+			YourList.input();
+			setcalc.Union(MyList, YourList);
+			YourList.SetEmpty();
+			break;
+		case 10:
+			//求交集
+			cout << "请输入第二个顺序表的元素个数" << endl;
+			YourList.input();
+			setcalc.Intersection(MyList, YourList);
+			YourList.SetEmpty();
+			break;
 		case 0:
 			break;
 		default:
@@ -117,7 +135,7 @@ SeqList::~SeqList()
 int SeqList::Length() const
 { //求目前的表长
 	cout << "长度为" << this->last + 1 << endl;
-	return 0;
+	return last + 1;
 }
 
 int SeqList::Find(T&x) const
@@ -144,7 +162,7 @@ int SeqList::Insert(T&x, int i)
 { //在第i个位置插入一个元素
   //此处需要修改！！
   //判断插入位置是否合理以及表是否满了
-	if (i <= 1 || i > last + 1)
+	if (i < 1 || i > last + 2)
 	{
 		cerr << "您输入的值不合理" << endl;
 		return 0;
@@ -254,6 +272,84 @@ void SeqList::output() const
 int SeqList::GetLast() const
 {
 	return this->last + 1;
+}
+
+void SeqList::SetEmpty()
+{
+	this->last = -1;
+}
+
+T SeqList::GetValue(int i)
+{
+	return data[i];
+}
+
+int SeqList::FindYN(T & x)
+{
+	//定位元素i的位置
+	//从前向后逐个查找
+	int i = 0;
+	while (i <= last && data[i] != x) {
+		i++;
+	}
+	if (i > last)
+	{
+		return -1;
+	}
+	else
+	{
+		return i + 1;
+	}
+}
+
+void SetOperations::Union(SeqList MyList, SeqList YourList)
+{ //实现两个顺序表的并集
+	//定义合适长度的顺序表存放并集结果
+	int leng = MyList.Length() + YourList.Length();
+	SeqList UnionList(leng);
+	//开始计算
+	int i, j, last;
+	last = MyList.GetLast();
+	for (i = 0; i <= last - 1; i++)
+	{
+		T x = MyList.GetValue(i);
+		UnionList.Insert(x, i + 1);
+	}
+	//UnionList.output();
+	last = YourList.GetLast();
+	for (j = 0; j <= last - 1; j++)
+	{
+		T x = YourList.GetValue(j);
+		if (MyList.FindYN(x) == -1)
+		{
+			UnionList.Insert(x, i + 1);
+			i++;
+		}
+	}
+	cout << "以下是所求并集" << endl;
+	UnionList.output();
+}
+
+void SetOperations::Intersection(SeqList MyList, SeqList YourList)
+{ //实现两个顺序表的交集
+	//定义合适长度的顺序表存放交集结果
+	int leng = MyList.Length() + YourList.Length();
+	SeqList UnionList(leng);
+	//开始计算
+	int i, j, last;
+	last = YourList.GetLast();
+	for (j = 0, i = 0; j <= last - 1; j++)
+	{
+		T x = YourList.GetValue(j);
+		if (MyList.FindYN(x) != -1)
+		{
+			UnionList.Insert(x, i + 1);
+			i++;
+		}
+	}
+	cout << "以下是所求并集" << endl;
+	UnionList.output();
+	//开始计算
 }
 
 //this is a test.
