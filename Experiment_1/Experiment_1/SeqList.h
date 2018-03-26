@@ -10,7 +10,7 @@ public:
 	~SeqList();
 	int Length() const;
 	int Find(T&x) const;
-	int Insert(T&x, int i); //插入函数的定义需要修改！！
+	int Insert(T&x, int i); //插入函数的定义已经修改！！
 	int Remove(T&x);
 	int isEmpty() const;
 	int isFull() const;

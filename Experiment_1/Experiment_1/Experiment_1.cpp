@@ -13,7 +13,7 @@ int main()
 	SeqList MyList(100);
 	while (true)
 	{
-		cout << "这个100元素数据表可以实现如下功能：" << endl;
+		cout << "这个100元素数据表可以实现如下功能:" << endl;
 		cout << "1,input data\n" << "2,insert data\n" << "3,delete data\n"
 			<< "4,search data position\n" << "5,get length of list\n" << "6,set a data\n"
 			<< "7,get value of data\n" << "8,output data\n" << "0,exit\n" << endl;
@@ -144,7 +144,7 @@ int SeqList::Insert(T&x, int i)
 { //在第i个位置插入一个元素
   //此处需要修改！！
   //判断插入位置是否合理以及表是否满了
-	if (i <= 0 || i>last + 1)
+	if (i <= 1 || i > last + 1)
 	{
 		cerr << "您输入的值不合理" << endl;
 		return 0;
@@ -155,12 +155,13 @@ int SeqList::Insert(T&x, int i)
 		exit(1);
 	}
 	//进行移动，移动后面的数
-	for (int j = last; i > i; j--)
+	//已修改好
+	this->last++;
+	for (int j = last; j >= i; j--)
 	{
 		data[j] = data[j - 1];
 	}
-	data[i] = x;
-	this->last++;
+	data[i - 1] = x;
 	return 0;
 }
 
