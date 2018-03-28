@@ -35,7 +35,8 @@ public:
 	void output();
 
 private:
-	LinkNode * first; //定义一个只想头结点的指针
+	LinkNode * first; //定义一个指向头结点的指针
+	int length;
 };
 
 List::List() {
@@ -46,7 +47,7 @@ List::~List() {
 
 }
 
-LinkNode::LinkNode(LinkNode * ptr = NULL) {
+inline LinkNode::LinkNode(LinkNode * ptr = NULL) {
 }
 
 inline LinkNode::LinkNode(const int & item, LinkNode * ptr) {

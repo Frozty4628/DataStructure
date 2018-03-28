@@ -11,7 +11,7 @@ void List::make_list_empty() { //链表置空
 
 }
 
-int List::get_length() {
+int List::get_length() { //获取链表的长度
 	return 0;
 }
 
