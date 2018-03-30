@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <stdlib.h>
+#include "SeqList_Test.h"
 using namespace std;
 
 typedef int T;
