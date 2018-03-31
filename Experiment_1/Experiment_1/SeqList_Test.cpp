@@ -1,7 +1,5 @@
 #include <iostream>
 #include <stdlib.h>
-#include <fstream>
-#include <cstring>
 #include "SeqList_Test.h"
 using namespace std;
 
