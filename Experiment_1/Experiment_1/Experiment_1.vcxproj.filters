@@ -23,12 +23,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Experiment_1.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="test_1.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="SeqList_Test.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
