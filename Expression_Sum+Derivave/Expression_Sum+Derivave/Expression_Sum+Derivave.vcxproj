@@ -115,11 +115,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="expression.h" />
     <ClInclude Include="expression_queue.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="expression_queue.cpp" />
+    <ClCompile Include="expression_test.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

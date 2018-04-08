@@ -15,15 +15,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="expression.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="expression_queue.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="expression_queue.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="expression_test.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
